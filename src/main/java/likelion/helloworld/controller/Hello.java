@@ -12,6 +12,7 @@ public class Hello {
     public String hello(){
         return "hello";
     }
+
     @GetMapping("/hello-data")
     public String hellodata(Model model){
         model.addAttribute("nameKey","오현");
@@ -36,6 +37,7 @@ public class Hello {
         return "hello";
     }
 
+
     @GetMapping("/Ohhyeon-param")
     public String ohhyeonParam(@RequestParam("name") String name,
                                @RequestParam("age") String age,
@@ -51,5 +53,34 @@ public class Hello {
     }
 
 
+    @GetMapping("/minuk")
+    public String minuk(){
+        return "minuk";
+    }
 
+    @GetMapping("/minuk-data")
+    public String minukdata(Model model){
+        model.addAttribute("nameKey","권민욱");
+        return "minuk";
+    }
+
+    @GetMapping("/minuk/{name}")
+    public String minukPath(@PathVariable String name, Model model){
+        model.addAttribute("nameKey",name);
+        return "minuk";
+    }
+
+    @GetMapping("/minuk-param")
+    public String minukParam(@RequestParam("name") String name,
+                             @RequestParam("grade") String grade,
+                             @RequestParam("major") String major,
+                             @RequestParam("hobby") String hobby,
+                             Model model){
+        model.addAttribute("nameKey",name);
+        model.addAttribute("grade", grade);
+        model.addAttribute("major",major);
+        model.addAttribute("hobby",hobby);
+
+        return "minuk";
+    }
 }
