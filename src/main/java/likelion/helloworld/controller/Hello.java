@@ -35,4 +35,21 @@ public class Hello {
 
         return "hello";
     }
+
+    @GetMapping("/Ohhyeon-param")
+    public String ohhyeonParam(@RequestParam("name") String name,
+                               @RequestParam("age") String age,
+                               @RequestParam("major") String major,
+                               @RequestParam("hobby") String hobby,
+                               Model model){
+        model.addAttribute("name",name);
+        model.addAttribute("age",age);
+        model.addAttribute("major",major);
+        model.addAttribute("hobby",hobby);
+
+        return "ohhyeon";
+    }
+
+
+
 }
