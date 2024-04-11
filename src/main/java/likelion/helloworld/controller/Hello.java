@@ -35,4 +35,16 @@ public class Hello {
 
         return "hello";
     }
+    @GetMapping("/chun-pr")
+    public String chun(@RequestParam("name") String name,
+                         @RequestParam("grade") String grade,
+                         @RequestParam("major") String major,
+                         @RequestParam("hobby") String hobby,
+                         Model model){
+        model.addAttribute("nameKey",name);
+        model.addAttribute("grade", grade);
+        model.addAttribute("major",major);
+        model.addAttribute("hobby",hobby);
+        return "chun";
+    }
 }
