@@ -52,24 +52,6 @@ public class Hello {
         return "ohhyeon";
     }
 
-
-    @GetMapping("/minuk")
-    public String minuk(){
-        return "minuk";
-    }
-
-    @GetMapping("/minuk-data")
-    public String minukdata(Model model){
-        model.addAttribute("nameKey","권민욱");
-        return "minuk";
-    }
-
-    @GetMapping("/minuk/{name}")
-    public String minukPath(@PathVariable String name, Model model){
-        model.addAttribute("nameKey",name);
-        return "minuk";
-    }
-
     @GetMapping("/minuk-param")
     public String minukParam(@RequestParam("name") String name,
                              @RequestParam("grade") String grade,
